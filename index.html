@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="description" content="Portal Informativo SSOMA — Compañía Minera Casma SAC. Documentos de Seguridad, Salud Ocupacional y Medio Ambiente.">
+  <title>Portal SSOMA — Compañía Minera Casma SAC</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body class="intro-active">
+
+  <!-- =================== NETFLIX-STYLE INTRO =================== -->
+  <div id="intro-overlay" role="dialog" aria-label="Intro de bienvenida SSOMA">
+
+    <!-- Title card (Logo reveal) -->
+    <div class="intro-title-card" id="intro-title-card">
+      <img src="images__1_-removebg-preview.png" alt="Logo CASMA" class="casma-logo-big">
+      <div class="casma-wordmark">Compañía Minera Casma</div>
+      <div class="casma-sub">Portal SSOMA · Seguridad que salva vidas</div>
+    </div>
+
+    <!-- Scanlines for cinematic feel -->
+    <div class="intro-scanlines"></div>
+
+    <!-- Flash between slides -->
+    <div class="intro-flash" id="intro-flash"></div>
+
+    <!-- SLIDES -->
+    <div class="intro-slides" id="intro-slides">
+      <!-- Rendered by JS -->
+    </div>
+
+    <!-- Vignette -->
+    <div class="intro-vignette"></div>
+
+    <!-- Particles -->
+    <div class="intro-particles" id="intro-particles"></div>
+
+    <!-- Progress bar -->
+    <div class="intro-progress-bar">
+      <div class="intro-progress-fill" id="intro-progress-fill"></div>
+    </div>
+
+    <!-- Navigation dots -->
+    <div class="intro-dots" id="intro-dots"></div>
+
+    <!-- Skip button -->
+    <button class="intro-skip-btn" id="intro-skip-btn" onclick="cerrarIntro()">
+      ⏭ Saltar intro
+    </button>
+
+  </div>
+  <!-- =================== END INTRO =================== -->
+
+  <header class="header">
+    <div class="header-inner">
+      <div class="logo-section">
+        <div class="logo-icon">
+          <img src="images__1_-removebg-preview.png" alt="Logo Compañía Minera Casma SAC" class="logo-img">
+        </div>
+        <div class="logo-text">
+          <h1>Compañía Minera Casma SAC</h1>
+          <p>Portal Informativo SSOMA — Seguridad, Salud Ocupacional y Medio Ambiente</p>
+        </div>
+      </div>
+      <nav class="nav-tabs" role="navigation" aria-label="Secciones del portal">
+        <button class="nav-tab active" data-section="inicio" id="tab-inicio">🏠 Inicio</button>
+        <button class="nav-tab" data-section="campanas" id="tab-campanas">📢 Campañas</button>
+        <button class="nav-tab" data-section="documentos" id="tab-documentos">📄 Documentos</button>
+        <button class="nav-tab" data-section="organizado" id="tab-organizado">🗂️ Organizado</button>
+        <button class="nav-tab" data-section="capacitaciones" id="tab-capacitaciones">🎓 Capacitaciones</button>
+        <button class="nav-tab" data-section="juegos-ssoma" id="tab-juegos">🎮 Juegos SSOMA</button>
+      </nav>
+    </div>
+  </header>
+
+  <main class="main">
+
+    <!-- ===================== INICIO ===================== -->
+    <section id="inicio" class="section active" aria-labelledby="inicio-title">
+
+      <div class="hero">
+        <div class="hero-content">
+          <h2 id="inicio-title">Sistema de Gestión <span>SSOMA</span></h2>
+          <p>Acceda a todos los documentos de Seguridad y Salud en el Trabajo: políticas, normativa legal, reglamentos, estándares y PETS. Capacítese con evaluaciones interactivas.</p>
+          <div class="stats-grid">
+            <div class="stat-card">
+              <div class="number" id="stat-total">—</div>
+              <div class="label">Documentos SST</div>
+            </div>
+            <div class="stat-card">
+              <div class="number" id="stat-categorias">—</div>
+              <div class="label">Categorías</div>
+            </div>
+            <div class="stat-card">
+              <div class="number" id="stat-capacitaciones">—</div>
+              <div class="label">Capacitaciones</div>
+            </div>
+            <div class="stat-card">
+              <div class="number" id="stat-completadas">—</div>
+              <div class="label">Completadas</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Políticas y Reglamentos — Carousel -->
+      <div class="docs-carousel-section">
+        <div class="docs-carousel-inner">
+          <h2 class="section-title">📋 Políticas y Reglamentos</h2>
+          <p class="section-subtitle">Documentos fundamentales — deslice o use las flechas</p>
+          <div class="docs-carousel" id="docs-carousel">
+            <button type="button" class="carousel-btn" id="carousel-prev" aria-label="Documento anterior">‹</button>
+            <div class="carousel-viewport">
+              <div class="carousel-track" id="carousel-track"></div>
+            </div>
+            <button type="button" class="carousel-btn" id="carousel-next" aria-label="Documento siguiente">›</button>
+          </div>
+          <div class="carousel-dots" id="carousel-dots"></div>
+        </div>
+      </div>
+
+      <h2 class="section-title">📂 Explorar por Categoría</h2>
+      <p class="section-subtitle">Seleccione una categoría para ver los documentos relacionados</p>
+      <div class="categories-grid" id="categories-grid"></div>
+
+      <div class="info-box">
+        <h3>🛡️ Compromiso de Seguridad</h3>
+        <p>
+          En Compañía Minera Casma SAC, la seguridad es un valor fundamental. Todo trabajador tiene el
+          <strong>derecho a decir NO</strong> a trabajos inseguros.
+          Este portal le permite consultar los procedimientos vigentes, comprender los riesgos de su actividad
+          y completar capacitaciones específicas antes de ejecutar cada tarea.
+        </p>
+      </div>
+    </section>
+
+    <!-- ===================== CAMPAÑAS & FLYERS ===================== -->
+    <section id="campanas" class="section" aria-labelledby="campanas-title">
+      <div class="campaigns-section">
+        <h2 class="section-title" id="campanas-title">📢 Campañas de Seguridad</h2>
+        <p class="section-subtitle">Material de comunicación y sensibilización SSOMA — toque una imagen para verla completa</p>
+
+        <div class="campaigns-grid" id="campaigns-grid">
+          <!-- Rendered by JS -->
+        </div>
+      </div>
+
+      <!-- Documentos principales / Políticas para descarga -->
+      <h2 class="section-title" style="margin-top:2rem">📑 Documentos Principales</h2>
+      <p class="section-subtitle">Políticas, reglamentos y normativa legal vigente</p>
+      <div class="docs-list" id="docs-principales"></div>
+    </section>
+
+    <!-- ===================== DOCUMENTOS ===================== -->
+    <section id="documentos" class="section" aria-labelledby="docs-title">
+      <h2 class="section-title" id="docs-title">📄 Biblioteca de Documentos SST</h2>
+      <p class="section-subtitle" id="docs-subtitle">Documentos organizados — busque por nombre, código o categoría</p>
+
+      <div class="toolbar">
+        <div class="search-box">
+          <input type="text" id="search-input" placeholder="Buscar documento, código o área..." aria-label="Buscar documentos">
+        </div>
+        <div class="filter-chips">
+          <span class="chip active" data-filter="todos" onclick="setFiltro('todos')">Todos</span>
+          <span class="chip" data-filter="politicas" onclick="setFiltro('politicas')">Políticas</span>
+          <span class="chip" data-filter="reglamentos" onclick="setFiltro('reglamentos')">Reglamentos</span>
+          <span class="chip" data-filter="normativa" onclick="setFiltro('normativa')">Normativa</span>
+          <span class="chip" data-filter="estandares" onclick="setFiltro('estandares')">Estándares</span>
+          <span class="chip" data-filter="pets_mina" onclick="setFiltro('pets_mina')">PETS Mina</span>
+          <span class="chip" data-filter="pets_ventilacion" onclick="setFiltro('pets_ventilacion')">Ventilación</span>
+          <span class="chip" data-filter="pets_mant_electrico" onclick="setFiltro('pets_mant_electrico')">Mant. Eléc.</span>
+          <span class="chip" data-filter="pets_mant_mecanico" onclick="setFiltro('pets_mant_mecanico')">Mant. Mec.</span>
+          <span class="chip" data-filter="procedimientos" onclick="setFiltro('procedimientos')">Proc. Gestión</span>
+        </div>
+      </div>
+
+      <div class="docs-list" id="docs-list"></div>
+    </section>
+
+    <!-- ===================== VISTA ORGANIZADA ===================== -->
+    <section id="organizado" class="section" aria-labelledby="org-title">
+      <h2 class="section-title" id="org-title">🗂️ Estructura Documental SSOMA</h2>
+      <p class="section-subtitle">Vista jerárquica de todos los documentos según su organización</p>
+
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:0.75rem;margin-bottom:1.5rem">
+        <div style="background:#fff;padding:1rem;border-radius:var(--radius);border-left:4px solid #1a5f7a;box-shadow:var(--shadow)">
+          <strong style="font-size:0.9rem">📋 Nivel 1 — Políticas y Normativa</strong>
+          <p style="font-size:0.78rem;color:var(--text-secondary);margin-top:0.3rem">Política Integrada, D.S. Minero, Reglamentos</p>
+        </div>
+        <div style="background:#fff;padding:1rem;border-radius:var(--radius);border-left:4px solid #ea580c;box-shadow:var(--shadow)">
+          <strong style="font-size:0.9rem">✅ Nivel 2 — Estándares</strong>
+          <p style="font-size:0.78rem;color:var(--text-secondary);margin-top:0.3rem">Caliente, altura, EPP, izaje, excavaciones</p>
+        </div>
+        <div style="background:#fff;padding:1rem;border-radius:var(--radius);border-left:4px solid #b45309;box-shadow:var(--shadow)">
+          <strong style="font-size:0.9rem">⛏️ Nivel 3 — PETS Operativos</strong>
+          <p style="font-size:0.78rem;color:var(--text-secondary);margin-top:0.3rem">Mina, Ventilación, Mantenimiento</p>
+        </div>
+        <div style="background:#fff;padding:1rem;border-radius:var(--radius);border-left:4px solid #059669;box-shadow:var(--shadow)">
+          <strong style="font-size:0.9rem">📁 Nivel 4 — Gestión</strong>
+          <p style="font-size:0.78rem;color:var(--text-secondary);margin-top:0.3rem">Control de documentos y procedimientos SSOMA</p>
+        </div>
+      </div>
+      <div class="tree-view" id="tree-view"></div>
+    </section>
+
+    <!-- ===================== CAPACITACIONES ===================== -->
+    <section id="capacitaciones" class="section" aria-labelledby="cap-title">
+      <h2 class="section-title" id="cap-title">🎓 Capacitaciones por Procedimiento</h2>
+      <p class="section-subtitle">Módulos de aprendizaje vinculados a cada PETS y estándar. Apruebe con 75% mínimo.</p>
+
+      <div class="toolbar">
+        <div class="search-box">
+          <input type="text" id="search-training" placeholder="Buscar capacitación..." aria-label="Buscar capacitación">
+        </div>
+      </div>
+
+      <div style="background:#fff;border:1px solid var(--border);border-radius:var(--radius);padding:1rem;margin-bottom:1.25rem;box-shadow:var(--shadow)">
+        <h4 style="color:var(--accent-green);margin-bottom:0.5rem;font-size:0.9rem">📌 Metodología</h4>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:0.75rem;font-size:0.82rem;color:var(--text-secondary)">
+          <div><strong style="color:var(--accent-gold)">1. Leer</strong> — Consulte el PETS o estándar completo</div>
+          <div><strong style="color:var(--accent-gold)">2. Identificar</strong> — Reconozca riesgos y controles</div>
+          <div><strong style="color:var(--accent-gold)">3. Evaluar</strong> — Responda el cuestionario</div>
+          <div><strong style="color:var(--accent-gold)">4. Aprobar</strong> — Obtenga el registro de capacitación</div>
+        </div>
+      </div>
+
+      <div class="training-grid" id="training-grid"></div>
+    </section>
+
+    <!-- ===================== JUEGOS SSOMA (HUB) ===================== -->
+    <section id="juegos-ssoma" class="section" aria-labelledby="juegos-title">
+      
+      <!-- MAIN HUB -->
+      <div id="juegos-hub">
+        <h2 class="section-title" id="juegos-title">🎮 Arcade SSOMA</h2>
+        <p class="section-subtitle">Aprende jugando. Selecciona un entrenamiento interactivo para comenzar.</p>
+
+        <div class="games-grid">
+          <!-- Game 1: IPERC -->
+          <div class="game-card" onclick="abrirJuego('iperc')">
+            <div class="game-icon">📋</div>
+            <h3>Simulador IPERC</h3>
+            <p>Identifica peligros, evalúa riesgos y aplica controles en la matriz.</p>
+            <span class="game-badge">3 Niveles</span>
+          </div>
+
+          <!-- Game 2: Desate -->
+          <div class="game-card" onclick="abrirJuego('desate')">
+            <div class="game-icon">⛏️</div>
+            <h3>Desate de Rocas</h3>
+            <p>Ordena paso a paso el procedimiento correcto para desatar rocas.</p>
+            <span class="game-badge">Procedimiento</span>
+          </div>
+
+          <!-- Game 3: Lentes -->
+          <div class="game-card" onclick="abrirJuego('lentes')">
+            <div class="game-icon">🥽</div>
+            <h3>Protección Ocular</h3>
+            <p>Relaciona el peligro con el problema evitado y el EPP correcto.</p>
+            <span class="game-badge">EPP</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- GAME 1: IPERC CONTAINER -->
+      <div id="game-view-iperc" class="game-view" style="display:none;">
+        <button class="btn btn-secondary back-to-hub-btn" onclick="volverAHubJuegos()">🔙 Volver al Arcade</button>
+        <h2 class="section-title" style="margin-top:1rem">🎮 Juego IPERC Interactivo</h2>
+        <p class="section-subtitle">Aprende a identificar peligros, evaluar riesgos y proponer controles construyendo el formulario IPERC</p>
+
+        <div class="iperc-intro-card">
+          <h3>⚠️ Identificación de Peligros — IPERC</h3>
+          <p>Arrastra cada tarjeta al lugar correcto del formulario: <strong style="color:#fbbf24">PELIGRO → RIESGO → EVALUACIÓN → CONTROL</strong>.<br>
+          ¡Completa el IPERC del escenario y gana puntos!</p>
+          <div class="iperc-difficulty-btns">
+            <button class="diff-btn easy active" id="diff-easy" onclick="iniciarJuegoIperc('easy')">🟢 Fácil</button>
+            <button class="diff-btn medium" id="diff-med" onclick="iniciarJuegoIperc('medium')">🟡 Medio</button>
+            <button class="diff-btn hard" id="diff-hard" onclick="iniciarJuegoIperc('hard')">🔴 Difícil</button>
+          </div>
+        </div>
+
+        <!-- Matriz de Evaluación de Riesgos -->
+        <div class="iperc-matrix-card">
+          <h4>📊 Matriz de Evaluación de Riesgos (Severidad × Probabilidad)</h4>
+          <div style="overflow-x:auto">
+            <table class="iperc-matrix-table">
+              <thead>
+                <tr>
+                  <th>Severidad \\ Prob.</th>
+                  <th>A — Común</th>
+                  <th>B — Ha sucedido</th>
+                  <th>C — Podría suceder</th>
+                  <th>D — Raro</th>
+                  <th>E — Prácticamente imposible</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>1 — Catastrófico</strong></td>
+                  <td class="cell-rojo">1</td><td class="cell-rojo">2</td><td class="cell-rojo">4</td><td class="cell-rojo">7</td><td class="cell-naranja">11</td>
+                </tr>
+                <tr>
+                  <td><strong>2 — Mortalidad</strong></td>
+                  <td class="cell-rojo">3</td><td class="cell-rojo">5</td><td class="cell-rojo">8</td><td class="cell-naranja">12</td><td class="cell-amarillo">16</td>
+                </tr>
+                <tr>
+                  <td><strong>3 — Permanente</strong></td>
+                  <td class="cell-rojo">6</td><td class="cell-naranja">9</td><td class="cell-naranja">13</td><td class="cell-amarillo">17</td><td class="cell-amarillo">20</td>
+                </tr>
+                <tr>
+                  <td><strong>4 — Temporal</strong></td>
+                  <td class="cell-naranja">10</td><td class="cell-amarillo">14</td><td class="cell-amarillo">18</td><td class="cell-amarillo">21</td><td class="cell-verde">23</td>
+                </tr>
+                <tr>
+                  <td><strong>5 — Menor</strong></td>
+                  <td class="cell-amarillo">15</td><td class="cell-amarillo">19</td><td class="cell-verde">22</td><td class="cell-verde">24</td><td class="cell-verde">25</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div style="display:flex;gap:0.75rem;flex-wrap:wrap;margin-top:0.75rem;font-size:0.75rem">
+            <span><span style="display:inline-block;width:12px;height:12px;background:#ef4444;border-radius:2px;margin-right:4px"></span>ALTO (1-8): 0-24 horas</span>
+            <span><span style="display:inline-block;width:12px;height:12px;background:#f97316;border-radius:2px;margin-right:4px"></span>MEDIO (9-14): 8-72 horas</span>
+            <span><span style="display:inline-block;width:12px;height:12px;background:#22c55e;border-radius:2px;margin-right:4px"></span>BAJO (15-25): 1 mes</span>
+          </div>
+        </div>
+
+        <div id="iperc-game-container">
+          <!-- Rendered by JS -->
+        </div>
+      </div>
+
+      <!-- GAME 2: DESATE DE ROCAS -->
+      <div id="game-view-desate" class="game-view" style="display:none;">
+        <button class="btn btn-secondary back-to-hub-btn" onclick="volverAHubJuegos()">🔙 Volver al Arcade</button>
+        <h2 class="section-title" style="margin-top:1rem">⛏️ Desate de Rocas</h2>
+        <p class="section-subtitle">Procedimiento seguro. Ordena los pasos cronológicamente de arriba (primero) hacia abajo (último).</p>
+
+        <div class="desate-game-container">
+          <div class="desate-board" id="desate-board">
+            <!-- Rendered by JS -->
+          </div>
+          
+          <div style="text-align:center;margin-top:1.5rem">
+            <button class="btn btn-success" onclick="verificarDesate()">✅ Validar Orden</button>
+          </div>
+          
+          <div id="desate-feedback" class="iperc-feedback" style="display:none;margin-top:1rem"></div>
+          <div id="desate-result" class="iperc-result" style="display:none;margin-top:1rem"></div>
+        </div>
+      </div>
+
+      <!-- GAME 3: USO DE LENTES -->
+      <div id="game-view-lentes" class="game-view" style="display:none;">
+        <button class="btn btn-secondary back-to-hub-btn" onclick="volverAHubJuegos()">🔙 Volver al Arcade</button>
+        <h2 class="section-title" style="margin-top:1rem">🥽 Uso de Lentes y Protección Ocular</h2>
+        <p class="section-subtitle">Empareja cada Peligro con el Problema Evitado y el EPP adecuado arrastrando las tarjetas.</p>
+
+        <div class="lentes-game-container">
+          <div class="lentes-board" id="lentes-board">
+            <!-- Rendered by JS -->
+          </div>
+          
+          <div class="lentes-bank" id="lentes-bank">
+            <!-- Rendered by JS -->
+          </div>
+
+          <div style="text-align:center;margin-top:1.5rem">
+            <button class="btn btn-success" onclick="verificarLentes()">✅ Verificar Parejas</button>
+          </div>
+
+          <div id="lentes-feedback" class="iperc-feedback" style="display:none;margin-top:1rem"></div>
+          <div id="lentes-result" class="iperc-result" style="display:none;margin-top:1rem"></div>
+        </div>
+      </div>
+
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <p>Compañía Minera Casma SAC — Sistema de Gestión SSOMA</p>
+    <p>Documentos actualizados al 23 de junio de 2026 | Uso interno</p>
+  </footer>
+
+  <!-- Modal PDF -->
+  <div class="modal-overlay" id="modal-pdf" onclick="if(event.target===this)cerrarModal('modal-pdf')">
+    <div class="modal">
+      <div class="modal-header">
+        <h3 id="modal-pdf-title">Documento</h3>
+        <button class="modal-close" onclick="cerrarModal('modal-pdf')" aria-label="Cerrar">×</button>
+      </div>
+      <div class="modal-body pdf-viewer">
+        <iframe id="pdf-frame" title="Visor de documento PDF"></iframe>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal Capacitación -->
+  <div class="modal-overlay" id="modal-training" onclick="if(event.target===this)cerrarModal('modal-training')">
+    <div class="modal" style="max-width:800px">
+      <div class="modal-header">
+        <h3>🎓 Capacitación</h3>
+        <button class="modal-close" onclick="cerrarModal('modal-training')" aria-label="Cerrar">×</button>
+      </div>
+      <div class="modal-body" id="training-body"></div>
+    </div>
+  </div>
+
+  <!-- Modal Flyer / Imagen -->
+  <div class="modal-flyer" id="modal-flyer" onclick="cerrarModalFlyer()">
+    <button class="modal-flyer-close" aria-label="Cerrar imagen">×</button>
+    <img id="modal-flyer-img" src="" alt="Campaña SSOMA">
+  </div>
+
+  <script src="js/app.js"></script>
+</body>
+</html>

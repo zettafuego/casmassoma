@@ -1,0 +1,102 @@
+{
+  "modulos_generales": [
+    {
+      "id": "intro-ssoma",
+      "titulo": "Introducción al Sistema SSOMA",
+      "duracion_min": 30,
+      "nivel": "Básico",
+      "objetivos": [
+        "Comprender el marco legal de seguridad minera en el Perú",
+        "Identificar las políticas corporativas de Casma SAC",
+        "Reconocer el derecho a decir NO al trabajo inseguro"
+      ],
+      "temas": [
+        "Política Integrada 2026",
+        "D.S. N° 024-2026-EM y normativa vigente",
+        "Reglamento Interno de SST",
+        "Cultura de prevención y reporte de incidentes"
+      ],
+      "documentos_relacionados": ["POLITICA INTEGRADA- CIA MINERA CASMA- 2026", "RGL.SIG.001", "POLITICA DERECHO A DECIR NO"]
+    },
+    {
+      "id": "epp-general",
+      "titulo": "Uso Correcto de EPP",
+      "duracion_min": 45,
+      "nivel": "Básico",
+      "objetivos": [
+        "Seleccionar el EPP según el riesgo de la tarea",
+        "Verificar el estado y vigencia del equipo",
+        "Aplicar el estándar EST.SIG.021 en campo"
+      ],
+      "temas": [
+        "Clasificación de EPP por zona y actividad",
+        "Inspección pre-uso",
+        "Mantenimiento y reposición",
+        "Consecuencias del no uso"
+      ],
+      "documentos_relacionados": ["EST.SIG.021"]
+    }
+  ],
+  "plantilla_pets": {
+    "objetivos_base": [
+      "Identificar los riesgos asociados a la tarea",
+      "Aplicar los controles descritos en el PETS",
+      "Ejecutar el procedimiento en el orden establecido",
+      "Reportar condiciones inseguras antes de iniciar"
+    ],
+    "preguntas_base": [
+      {
+        "pregunta": "¿Qué debe hacer el trabajador ANTES de iniciar la tarea?",
+        "opciones": [
+          "Iniciar de inmediato para cumplir meta",
+          "Realizar el ATS/permiso de trabajo y verificar controles",
+          "Solicitar solo el EPP al almacén",
+          "Esperar instrucciones del turno siguiente"
+        ],
+        "correcta": 1,
+        "explicacion": "Todo trabajo de riesgo requiere análisis previo, permisos y verificación de controles según el PETS."
+      },
+      {
+        "pregunta": "¿Cuándo se debe ejercer el derecho a decir NO?",
+        "opciones": [
+          "Solo cuando lo autorice el supervisor",
+          "Cuando exista condición insegura sin control",
+          "Nunca, para no afectar producción",
+          "Únicamente en auditorías"
+        ],
+        "correcta": 1,
+        "explicacion": "La política corporativa garantiza detener trabajos inseguros sin represalias."
+      },
+      {
+        "pregunta": "¿Qué hacer ante una desviación del procedimiento?",
+        "opciones": [
+          "Continuar si el resultado es similar",
+          "Detener, corregir y reportar la desviación",
+          "Modificar el PETS en campo",
+          "Ignorar si no hay incidente"
+        ],
+        "correcta": 1,
+        "explicacion": "Las desviaciones deben corregirse y reportarse para prevenir incidentes."
+      },
+      {
+        "pregunta": "¿Quién es responsable de la seguridad en la tarea?",
+        "opciones": [
+          "Solo el supervisor de área",
+          "Solo el área de SSOMA",
+          "Todos los involucrados en la actividad",
+          "Únicamente el operador principal"
+        ],
+        "correcta": 2,
+        "explicacion": "La seguridad es responsabilidad compartida de todo el equipo de trabajo."
+      }
+    ],
+    "riesgos_por_area": {
+      "pets_mina": ["Caída de rocas", "Gases y ventilación", "Equipos móviles", "Explosivos", "Ruido y vibración"],
+      "pets_ventilacion": ["Deficiencia de oxígeno", "Gases tóxicos", "Atrapamiento", "Caídas en chimeneas"],
+      "pets_mant_electrico": ["Electrocución", "Arco eléctrico", "Trabajos en altura", "Energía residual"],
+      "pets_mant_mecanico": ["Atrapamiento", "Partes móviles", "Izaje de cargas", "Fluidos a presión"],
+      "pets_planeamiento": ["Control de equipos", "Coordinación de voladuras", "Tráfico de vehículos"],
+      "estandares": ["Riesgo específico del estándar", "EPP obligatorio", "Permisos de trabajo", "Señalización"]
+    }
+  }
+}
